@@ -16,6 +16,8 @@ If you want to contribute to the Language Reference or edit existing content, yo
 
 Please note that every Reference file should include as least a Description, some Example Code, and links to other relevant infos (See Also section). 
 
+*If you want to traslate this content in another language please make sure to translate ONLY the text highlighted in  https://drive.google.com/file/d/0B_6MhyhSmjXeSERydnhleXlLWVk/view[this PDF file for a single Entity], and https://drive.google.com/file/d/0B_6MhyhSmjXeQzVYWC1tZnViNFE/view[this other PDF for Parent of Entities].*
+
 If you need to add images to the Asciidoc please create a folder called attachments in the same directory as the Asciidoc file. Images can be saved in SVG and PNG format, max size 200KB.
 
 == Contribute Content on Github
