@@ -17,29 +17,30 @@ subCategories: [ "Advanced I/O" ]
 --
 
 [float]
-=== Description
-Reads a pulse (either HIGH or LOW) on a pin. For example, if *value* is *HIGH*, `pulseIn()` waits for the pin to go *HIGH*, starts timing, then waits for the pin to go *LOW* and stops timing. Returns the length of the pulse in microseconds. Gives up and returns 0 if no pulse starts within a specified time out.
+=== 説明
+ピンに入力されたのパルス信号を読み取ります(HIGH または LOW). たとえば，`pulseIn()` を *HIGH* に設定した場合, ピンが *HIGH* になった時点を開始時間とし, *LOW* になった時点を終了時間とします．そして，そのパルス幅をマイクロ秒で返します．タイムアウト時間を設定し，タイムアウトした場合は，0を返します．
 
-The timing of this function has been determined empirically and will probably show errors in longer pulses. Works on pulses from 10 microseconds to 3 minutes in length.
+経験上，この関数で長いパルスを計測するとエラーが発生する場合があります．10マイクロ秒から3分のパルス幅の間で作動します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `pulseIn(pin, value)`
 
 `pulseIn(pin, value, timeout)`
 
 [float]
-=== Parameters
-`pin`: the number of the pin on which you want to read the pulse. (int)
+=== パラメータ
+`pin`: パルスを読み取りたいピンの番号 (int)
 
-`value`: type of pulse to read: either link:../../../variables/constants/constants/[HIGH] or link:../../../variables/constants/constants/[LOW]. (int)
+`value`: 読み取りたいパルスの種類: link:../../../variables/constants/constants/[HIGH] または link:../../../variables/constants/constants/[LOW]. (int)
 
-`timeout` (optional): the number of microseconds to wait for the pulse to start; default is one second (unsigned long)
+`timeout` (任意): パルスを何マイクロ秒待つか; 初期値は1秒 (unsigned long)
+
 [float]
-=== Returns
-the length of the pulse (in microseconds) or 0 if no pulse started before the timeout (unsigned long)
+=== 戻り値
+パルス幅(マイクロ秒)．もし，タイムアウトまでパルスが入力されなかった場合は0 (unsigned long)
 
 --
 // OVERVIEW SECTION ENDS
@@ -52,9 +53,9 @@ the length of the pulse (in microseconds) or 0 if no pulse started before the ti
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-The example calculated the time duration of a pulse on pin 7.
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+この例では，7番ピンのパルス幅を測定します．
 
 [source,arduino]
 ----
