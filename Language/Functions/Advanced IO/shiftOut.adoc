@@ -17,34 +17,33 @@ subCategories: [ "Advanced I/O" ]
 --
 
 [float]
-=== Description
-Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a clock pin is pulsed (taken high, then low) to indicate that the bit is available.
+=== 説明
+1バイトのデータを1ビットだけシフトアウトします. 最上位ビット(MSB，左側)と最下位ビット(LSB，右側)のどちらからでも実行できます. 各ビットはデータピンに順番に書き込まれたのち，クロックピンにパルスが出力されることで(HIGHののちにLOW)，ビットが使用可能であることを示します．
 
-Note- if you're interfacing with a device that's clocked by rising edges, you'll need to make sure that the clock pin is low before the call to `shiftOut()`, e.g. with a call to `digitalWrite(clockPin, LOW)`.
+注- もし，立ち上がりエッジをクロックとして使用するデバイスを接続する場合は，`shiftOut()` を実行する前に，最初にクロックピンをLOWにしておく必要があります．たとえば， `digitalWrite(clockPin, LOW)` などを実行します．
 
-This is a software implementation; see also the link:../SPI[SPI library], which provides a hardware implementation that is faster but works only on specific pins.
+この関数はソフトウェアによって実行されています; ハードウェアで実行され，高速で動作する link:../SPI[SPI library] も参照(特定のピンでしか動作しません)．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `shiftOut(dataPin, clockPin, bitOrder, value)`
 
 
 [float]
-=== Parameters
-`dataPin`: the pin on which to output each bit (int)
+=== パラメータ
+`dataPin`: 各ビットを出力するピン (int)
 
-`clockPin`: the pin to toggle once the dataPin has been set to the correct value (int)
+`clockPin`: データピンに正しい値がセットされたら，パルスを出力するピン (int)
 
-`bitOrder`: which order to shift out the bits; either MSBFIRST or LSBFIRST.
-(Most Significant Bit First, or, Least Significant Bit First)
+`bitOrder`: シフトする順番; MSBFIRST (最上位ビット側から) または LSBFIRST(最下位ビット側から)
 
-`value`: the data to shift out. (byte)
+`value`: シフトアウトするデータ (byte)
 
 [float]
-=== Returns
-Nothing
+=== 戻り値
+なし
 
 --
 // OVERVIEW SECTION ENDS
@@ -57,9 +56,9 @@ Nothing
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-For accompanying circuit, see the http://arduino.cc/en/Tutorial/ShiftOut[tutorial on controlling a 74HC595 shift register].
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+回路については，こちらをご覧ください http://arduino.cc/en/Tutorial/ShiftOut[tutorial on controlling a 74HC595 shift register].
 
 [source,arduino]
 ----
@@ -72,29 +71,28 @@ For accompanying circuit, see the http://arduino.cc/en/Tutorial/ShiftOut[tutoria
 //          : to count from 0 to 255                            //
 //****************************************************************
 
-//Pin connected to ST_CP of 74HC595
+//74HC595のST_CPに接続するピン
 int latchPin = 8;
-//Pin connected to SH_CP of 74HC595
+//74HC595のSH_CPに接続するピン
 int clockPin = 12;
-////Pin connected to DS of 74HC595
+//74HC595のDSに接続するピン
 int dataPin = 11;
 
 void setup() {
-  //set pins to output because they are addressed in the main loop
+  //メインループで使用されているピンを出力ピンに設定する
   pinMode(latchPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
 }
 
 void loop() {
-  //count up routine
+  //カウントアップのルーチン
   for (int j = 0; j < 256; j++) {
-    //ground latchPin and hold low for as long as you are transmitting
-    digitalWrite(latchPin, LOW);
+    //通信中は，latchPinをLOWにする
+    digitalWrite(latchPin, LOW);
     shiftOut(dataPin, clockPin, LSBFIRST, j);
-    //return the latch pin high to signal chip that it
-    //no longer needs to listen for information
-    digitalWrite(latchPin, HIGH);
+    //通信が終了したらlatchPinをHIGHにする
+    digitalWrite(latchPin, HIGH);
     delay(1000);
   }
 }
@@ -102,30 +100,30 @@ void loop() {
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-The dataPin and clockPin must already be configured as outputs by a call to link:../digital-io/pinMode[pinMode()].
+=== 注意
+データピンとクロックピンは，link:../digital-io/pinMode[pinMode()] を使用して，出力(OUTPUT)に設定する必要があります．.
 
-shiftOut is currently written to output 1 byte (8 bits) so it requires a two step operation to output values larger than 255.
+shiftOutは1バイト(8ビット)を出力するために作られています．よって，255より大きな値を出力するためには，2段階の操作が必要となります．
 [source,arduino]
 ----
-// Do this for MSBFIRST serial
+//MSBFIRSTのシリアルで使用
 int data = 500;
-// shift out highbyte
+//上位バイトをシフトアウト
 shiftOut(dataPin, clock, MSBFIRST, (data >> 8));
-// shift out lowbyte
+//下位バイトをシフトアウト
 shiftOut(dataPin, clock, MSBFIRST, data);
 
-// Or do this for LSBFIRST serial
+//LSBFIRSTのシリアルで使用
 data = 500;
-// shift out lowbyte
+//下位バイトをシフトアウト
 shiftOut(dataPin, clock, LSBFIRST, data);
-// shift out highbyte
+//上位バイトをシフトアウト
 shiftOut(dataPin, clock, LSBFIRST, (data >> 8));
 ----
 [%hardbreaks]
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
