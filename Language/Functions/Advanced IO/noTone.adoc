@@ -2,7 +2,7 @@
 title: noTone()
 title_expanded: ""
 categories: [ "Functions" ]
-subCategories: [ "Advanced I/O" ]
+subCategories: [ "応用入出力" ]
 ---
 
 :source-highlighter: pygments
