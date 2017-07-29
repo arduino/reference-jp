@@ -17,25 +17,25 @@ subCategories: [ "Analog I/O" ]
 --
 
 [float]
-=== Description
-Reads the value from the specified analog pin. The Arduino board contains a 6 channel (8 channels on the Mini and Nano, 16 on the Mega), 10-bit analog to digital converter. This means that it will map input voltages between 0 and 5 volts into integer values between 0 and 1023. This yields a resolution between readings of: 5 volts / 1024 units or, .0049 volts (4.9 mV) per unit. The input range and resolution can be changed using link:../analogReference[analogReference()]`.
+=== 説明
+指定したアナログピンの電圧を読み取ります．Arduinoには6チャンネル（Mini:8チャンネル，Mega:16チャンネル）あり，10ビットのA/D変換ができます．これは，0-5Vの入力電圧を0-1023の整数値に変換することが可能です．これにより，5V/1024または単位当たり0.0049V(4.9 mV)の分解能を得られることができます．入力レンジと分解能は以下のリンクで変更することが可能です．link:../analogReference[analogReference()]`.
 
-It takes about 100 microseconds (0.0001 s) to read an analog input, so the maximum reading rate is about 10,000 times a second.
+アナログ入力の読み取りには，100マイクロ秒(0.0001s)要するので，最大の読み取りレートは，1秒間に10,000回です．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 
 `analogRead(pin)`
 
 [float]
-=== Parameters
-`pin`: the number of the analog input pin to read from (0 to 5 on most boards, 0 to 7 on the Mini and Nano, 0 to 15 on the Mega)
+=== パラメータ
+`pin`: アナログ入力の読み取りを行うピンの番号(多くのボード:0-5, MiniとNano:0-7, Mega:0-15)
 
 [float]
-=== Returns
-int(0 to 1023)
+=== 戻り値
+int(0-1023)
 
 --
 // OVERVIEW SECTION ENDS
@@ -48,36 +48,36 @@ int(0 to 1023)
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-The code reads the voltage on analogPin and displays it.
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+このコードでは，アナログピンの電圧の読み取りとディスプレイ表示を行います．
 
 [source,arduino]
 ----
-int analogPin = 3;     // potentiometer wiper (middle terminal) connected to analog pin 3
-                       // outside leads to ground and +5V
-int val = 0;           // variable to store the value read
+int analogPin = 3;     //ポテンショメーターの真ん中の端子をアナログピンの3番に接続
+                       //両端の端子は，GNDと+5Vに接続
+int val = 0;           //読み取った値を格納する変数
 
 void setup()
 {
-  Serial.begin(9600);              //  setup serial
+  Serial.begin(9600);              //シリアルの設定
 }
 
 void loop()
 {
-  val = analogRead(analogPin);     // read the input pin
-  Serial.println(val);             // debug value
+  val = analogRead(analogPin);     //入力ピンの読み取り
+  Serial.println(val);             //値の表示
 }
 ----
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-If the analog input pin is not connected to anything, the value returned by analogRead() will fluctuate based on a number of factors (e.g. the values of the other analog inputs, how close your hand is to the board, etc.).
+=== 注意
+アナログ入力ピンが未接続の場合，analogRead()から返される値は様々な要素（他のアナログ入力の値または基板と手の距離など）により変動します．
 [%hardbreaks]
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
