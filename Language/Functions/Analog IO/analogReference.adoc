@@ -17,29 +17,31 @@ subCategories: [ "Analog I/O" ]
 --
 
 [float]
-=== Description
-Configures the reference voltage used for analog input (i.e. the value used as the top of the input range). The options are:
+=== 説明
+アナログ入力で使用する基準電圧を設定します．（例として，入力レンジの最大値を決めることが可能）
 
-* DEFAULT: the default analog reference of 5 volts (on 5V Arduino boards) or 3.3 volts (on 3.3V Arduino boards)
-* INTERNAL: an built-in reference, equal to 1.1 volts on the ATmega168 or ATmega328 and 2.56 volts on the ATmega8 (not available on the Arduino Mega)
-* INTERNAL1V1: a built-in 1.1V reference (Arduino Mega only)
-* INTERNAL2V56: a built-in 2.56V reference (Arduino Mega only)
-* EXTERNAL: the voltage applied to the AREF pin (0 to 5V only) is used as the reference.
+以下が選択可能です：
+
+* DEFAULT: 標準の基準電圧，5V（5V使用のArduinoの場合）または3.3V（3.3V使用のArduinoの場合）
+* INTERNAL: 内蔵の基準電圧（Arduino Megaでは使用不可），ATmega168またはATmega328使用のArduinoは1.1V，ATmega8使用のArduinoは2.56V
+* INTERNAL1V1: 内蔵の基準電圧（Arduino Megaのみ），1.1V
+* INTERNAL2V56: 内蔵の基準電圧（Arduino Megaのみ），2.56V
+* EXTERNAL: AREFピンに入力されている電圧を基準電圧として使用（0-5Vまで）
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `analogReference(type)`
 
 
 [float]
-=== Parameters
-`type`: which type of reference to use (DEFAULT, INTERNAL, INTERNAL1V1, INTERNAL2V56, or EXTERNAL).
+=== パラメータ
+`type`: 使用する基準電圧の種類（DEFAULT, INTERNAL, INTERNAL1V1, INTERNAL2V56またはEXTERNAL）
 
 [float]
-=== Returns
-Nothing
+=== 戻り値
+なし
 
 --
 // OVERVIEW SECTION ENDS
@@ -52,16 +54,16 @@ Nothing
 --
 
 [float]
-=== Notes and Warnings
-After changing the analog reference, the first few readings from `analogRead()` may not be accurate.
+=== 注意
+基準電圧を変更した後の，最初の数回のanalogRead()の値は正確でない可能性があります．
 
-*Don't use anything less than 0V or more than 5V for external reference voltage on the AREF pin! If you're using an external reference on the AREF pin, you must set the analog reference to EXTERNAL before calling `analogRead()`.* Otherwise, you will short together the active reference voltage (internally generated) and the AREF pin, possibly damaging the microcontroller on your Arduino board.
+*0V以下または5V以上の電圧をAREFピンに入力しないでください！　AREFピンを外部基準電圧として使用する場合は，analogRead()を呼び出す前に基準電圧のモードを「EXTERNAL」に設定する必要があります．設定しなかった場合は，内部で生成している基準とAREFピンがショートし，Arduinoの基板を破壊する可能性があります．
 
-Alternatively, you can connect the external reference voltage to the AREF pin through a 5K resistor, allowing you to switch between external and internal reference voltages. Note that the resistor will alter the voltage that gets used as the reference because there is an internal 32K resistor on the AREF pin. The two act as a voltage divider, so, for example, 2.5V applied through the resistor will yield 2.5 * 32 / (32 + 5) = ~2.2V at the AREF pin.
+さらに，基準電圧を5kΩの抵抗を介してAREFピンに接続することで，内部と外部の基準電圧を切り替えられるようになります．だだし，AREFピンには32kΩの抵抗があり，これによって抵抗分圧の働きをするため，基準電圧が変化することに注意してください．例えば，2.5Vを入力した場合には，AREFピンでは約2.2Vとなります．（式：2.5 * 32 / (32 + 5) = ~2.2V）
 [%hardbreaks]
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTON IS MANDATORY ◄◄◄◄◄
