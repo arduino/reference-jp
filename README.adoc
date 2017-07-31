@@ -2,43 +2,44 @@
 Reference-jp is the repo for the Language Reference documentation of the Arduino syntax in **Japanese**.  
 All the Reference terms files are in AsciiDoc format. Manutius, the Arduino platform to manage and publish content, turns Asciidoc documents into HTML pages, PDFs, and more.
 
-Thank you for taking the time to contribute to Arduino content, this is really helpful to the whole Arduino Community.
+Arduinoコンテンツへの貢献ありがとうございます．これらは，Arduinoコミュニティへの助けになります．
 
-== Content Creation and Editing
-If you want to contribute new content, create a new file (with any text or code editor) and save it as .adoc.  
-Do not use parenthesis or any special character in the file name.  
-In https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] you will find an overview on the AsciiDoc syntax in use on the Manutius platform. This includes Titles, Text, Links, Images, Tables, Code and various embeds (video, slideshow, audio and code). You can see it rendered https://cdn.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[here].
+== コンテンツの作成と編集
+新しいコンテンツを提供したい場合は，新しいファイルを作成し(テキストエディタまたはコードエディタを使用)，「.adoc」として保存してください．  
+ファイル名には，括弧や特殊文字を使わないでください．  
+Manutiusプラットフォームで使用しているAsciiDoc構文を確認したい場合はこちらをご覧ください． https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] こちらには，タイトルや文章，リンク，画像，表，コード，様々なmbed(動画やスライドショー，オーディオ，コード)が含まれています． レンダリングされたものは， https://cdn.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[こちら] で見ることができます．
 
-If you want to contribute to the Language Reference or edit existing content, you can find two templates in reference-jp/AsciiDoc_sample/Reference_Terms:
+言語リファレンスや既存のコンテンツを提供したい場合は，2つのテンプレートを確認することができます．reference-jp/AsciiDoc_sample/Reference_Terms:
 
-* Use https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (rendered https://cdn.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[here]) for terms such as link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite].
-* Use https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`] (rendered https://cdn.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[here]) for groups of functions such as link:http://arduino.cc/en/Reference/Serial[Serial].
+*link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite] などの用語にはこちらを使用 https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (レンダリング後は https://cdn.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[こちら]) 
 
-Please note that every Reference file should include as least a Description, some Example Code, and links to other relevant infos (See Also section). 
+*link:http://arduino.cc/en/Reference/Serial[Serial] などの機能グループにはこちらを使用 https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`] (レンダリング後は https://cdn.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[こちら])
 
-*If you want to traslate this content in another language please make sure to translate ONLY the text highlighted in  https://drive.google.com/file/d/0B_6MhyhSmjXeSERydnhleXlLWVk/view[this PDF file for a single Entity], and https://drive.google.com/file/d/0B_6MhyhSmjXeQzVYWC1tZnViNFE/view[this other PDF for Parent of Entities].*
+すべてのリファレンスのファイルには，説明やコード例，関係する情報へのリンク(参照)が含まれている必要があります．
 
-If you need to add images to the Asciidoc please create a folder called attachments in the same directory as the Asciidoc file. Images can be saved in SVG and PNG format, max size 200KB.
+*コンテンツを他の言語に翻訳したい場合は，以下のURLで「ハイライトされている部分のみ」翻訳するようにしてください．  https://drive.google.com/file/d/0B_6MhyhSmjXeSERydnhleXlLWVk/view[this PDF file for a single Entity] もしくは https://drive.google.com/file/d/0B_6MhyhSmjXeQzVYWC1tZnViNFE/view[this other PDF for Parent of Entities].*
 
-== Contribute Content on Github
-If you are not familiar with Git you can contribute content directly on Github via their online interface. We put together a short Tutorial to show you how, https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[CHECK IY OUT!]
+もし，AsciiDocに画像を追加する必要がある場合は，「attachments」というファイルをAsciiDocファイルと同じディレクトリに作成してください．画像はSVGまたはPNGフォーマットで保存でき，最大サイズは200KBとなっています．
 
-link:https://help.github.com/articles/editing-files-in-another-user-s-repository/[You can also follow this guide] (written by the Github team) to learn how to edit an .adoc file and propose a file change to the Arduino team.  
-When suggesting a change, please follow the guidelines described in the Reference template files.
+== Githubでコンテンツに貢献する
+Gitになれていない場合は，オンラインインターフェースを通じてGithubから直接編集することができます． 使い方の短いチュートリアルをまとめています． https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[確認する！]
 
-
-== Submitting a pull request
-We are glad you want to contribute to the Arduino Reference: that's the best way to help the community.
-
-Your contribution is adding or modifying existing code or full descriptions, please always refer to an existing issue or open a new one before contributing. 
-
-Please note that your contribution will be licenced under Attribution-ShareAlike 4.0 International, see https://creativecommons.org/licenses/by-sa/4.0/.
+adocファイルの編集やArduinoチームへのファイル変更の提案の方法も確認できます．link:https://help.github.com/articles/editing-files-in-another-user-s-repository/[確認する](Githubチームが執筆)   
+変更を提案する場合は，リファレンステンプレートのガイドラインに従ってください．
 
 
-=== Folder Structure
+== プルリクエストを投稿する
+私たちは，あなたのArduinoリファレンスに対する貢献を嬉しく思っています．これは，コミュニティへを助ける最善の方法となります．
+
+既存のコードや説明を，追加または修正することで貢献することができます．貢献する前には，常に，既存のIssueを参照するか，新しいIssueを開くようにしてください． 
+
+あなたの貢献は，Attribution-ShareAlike 4.0 Internationalの下でライセンスされます．こちらを参照 https://creativecommons.org/licenses/by-sa/4.0/
+
+
+=== フォルダ構造
 [source]
 ----
-reference-en
+reference-jp
 ├─ AsciiDoc_sample
 │   ├── AsciiDoc_Dictionary
 │   │   ├── AsciiDoc_Template-Dictionary.adoc
@@ -56,4 +57,4 @@ reference-en
 
 ----
 
-Within the Language folder, the file tree follows the same structure as in the link:http://arduino.cc/en/Reference/HomePage[Arduino Reference webpage]
+Languageフォルダの内のファイルツリーは，リンク内のものと同じ構造となります．link:http://arduino.cc/en/Reference/HomePage[Arduino Reference webpage]
