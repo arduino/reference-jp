@@ -17,30 +17,31 @@ subCategories: [ "Analog I/O" ]
 --
 
 [float]
-=== Description
-Writes an analog value (http://arduino.cc/en/Tutorial/PWM[PWM wave]) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to `analogWrite()`, the pin will generate a steady square wave of the specified duty cycle until the next call to `analogWrite()` (or a call to `digitalRead()` or `digitalWrite()` on the same pin). The frequency of the PWM signal on most pins is approximately 490 Hz. On the Uno and similar boards, pins 5 and 6 have a frequency of approximately 980 Hz.
+=== 説明
+アナログ電圧をピンに出力することができます(http://arduino.cc/en/Tutorial/PWM[PWM wave])．これは，LEDライトの明るさを変化させたり，モーターのスピードを変化させたりすることに使用できます．一度 `analogWrite()` を呼び出したら，次に `analogWrite()` を呼び出すまで，ピンに指定のデューティー比の方形波を生成し続けます（または `analogWrite()` や `analogWrite()`を同じピンに呼び出すまで）． 多くのピンでのPWM信号の周波数は約490Hzです． Unoとそれに似たボードの5番と6番ピンの周波数は約980Hzです．
 [%hardbreaks]
-On most Arduino boards (those with the ATmega168 or ATmega328), this function works on pins 3, 5, 6, 9, 10, and 11. On the Arduino Mega, it works on pins 2 - 13 and 44 - 46. Older Arduino boards with an ATmega8 only support `analogWrite()` on pins 9, 10, and 11.
-The Arduino DUE supports `analogWrite()` on pins 2 through 13, plus pins DAC0 and DAC1. Unlike the PWM pins, DAC0 and DAC1 are Digital to Analog converters, and act as true analog outputs.
-You do not need to call `pinMode()` to set the pin as an output before calling `analogWrite()`.
-The `analogWrite` function has nothing to do with the analog pins or the `analogRead` function.
+ほとんどのArduinoでは（ATmega168かATmega328を搭載しているもの），この関数は3，5，6，9，10，11番のピンで機能します．Arduino Megaでは，2～13番と44～46番のピンで機能します．ATmega8を搭載している昔のArduinoでは， `analogWrite()` の使用は9,10,11番ピンに限られます．
+Arduino DUEでは，`analogWrite()` は2～13番ピンとDAC0，DAC1のピンでも使用することができます．PWMピンとは違い，DAC0とDAC1はD/A変換をしているので，これらのピンは真のアナログ出力として動作します．
+`analogWrite()` を呼び出す前に， `pinMode()` で使用するピンを出力に設定する必要はありません．
+`analogWrite` 関数はアナログピンや `analogRead` 関数とは無関係です．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `analogWrite(pin, value)`
 
 
 [float]
-=== Parameters
-`pin`: the pin to write to. Allowed data types: int. +
-`value`: the duty cycle: between 0 (always off) and 255 (always on). Allowed data types: int
+=== パラメータ
+`pin`: 出力したいピン番号　使用可能なデータ型：int
+
+`value`: デューティー比：0（常にオフ）から255（常にオン）まで．使用可能なデータ型：int
 
 
 [float]
-=== Returns
-Nothing
+=== 戻り値
+なし
 
 --
 // OVERVIEW SECTION ENDS
@@ -53,38 +54,38 @@ Nothing
 --
 
 [float]
-=== Example Code
-Sets the output to the LED proportional to the value read from the potentiometer.
+=== コード例
+ポテンショメーターから読み取った値に比例したLED出力をします．
 
 
 [source,arduino]
 ----
-int ledPin = 9;      // LED connected to digital pin 9
-int analogPin = 3;   // potentiometer connected to analog pin 3
-int val = 0;         // variable to store the read value
+int ledPin = 9;      // LEDを9番のデジタルピンに接続する
+int analogPin = 3;   // ポテンショメーターを3番のアナログピンに接続する
+int val = 0;         // 読み取った値を格納する変数
 
 void setup()
 {
-  pinMode(ledPin, OUTPUT);   // sets the pin as output
+  pinMode(ledPin, OUTPUT);   // ピンを出力に設定する
 }
 
 void loop()
 {
-  val = analogRead(analogPin);   // read the input pin
-  analogWrite(ledPin, val / 4);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+  val = analogRead(analogPin);   // 入力ピンを読み取る
+  analogWrite(ledPin, val / 4);  // analogReadの値は0から1023まで，analogWriteの値は0から255まで
 }
 ----
 [%hardbreaks]
 
 
 [float]
-=== Notes and Warnings
-The PWM outputs generated on pins 5 and 6 will have higher-than-expected duty cycles. This is because of interactions with the `millis()` and `delay()` functions, which share the same internal timer used to generate those PWM outputs. This will be noticed mostly on low duty-cycle settings (e.g. 0 - 10) and may result in a value of 0 not fully turning off the output on pins 5 and 6.
+=== 注意
+5番と6番ピンで生成したPWM出力は，設定したデューティー比よりも高くなる場合があります． これは，PWM出力に使用している内部タイマーが，同じタイマーを使用する `millis()` や `delay()` などの関数によって割り込まれるからです．これらは，低デューティー比の場合（0から10）のときに多く現れ，5番と6番ピンでデューティー比を0に設定しても完全にはオフにならない可能性があります．
 [%hardbreaks]
 
 
 [float]
-=== See also
+=== 参照
 [role="language"]
 * #LANGUAGE# link:../analogRead[analogRead()]
 * #LANGUAGE# link:../../arduino-due-only/analogWriteResolution[analogWriteResolution()]
