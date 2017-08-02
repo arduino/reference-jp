@@ -73,7 +73,7 @@ subCategories: [ "応用入出力" ]
 === 参照
 
 [role="language"]
-* #LANGUAGE# link:../../analog-io/analogWrite[analogWrite()]
+* #LANGUAGE# link:../../analog-io/analogwrite[analogWrite()]
 
 [role="example"]
 * #EXAMPLE# http://arduino.cc/en/Tutorial/Tone[Tone^]
