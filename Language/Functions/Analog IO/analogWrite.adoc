@@ -1,7 +1,7 @@
 ---
 title: analogWrite()
 categories: [ "Functions" ]
-subCategories: [ "Analog I/O" ]
+subCategories: [ "アナログ入出力" ]
 ---
 
 :source-highlighter: pygments
@@ -81,14 +81,19 @@ void loop()
 [float]
 === 注意
 5番と6番ピンで生成したPWM出力は，設定したデューティー比よりも高くなる場合があります． これは，PWM出力に使用している内部タイマーが，同じタイマーを使用する `millis()` や `delay()` などの関数によって割り込まれるからです．これらは，低デューティー比の場合（0から10）のときに多く現れ，5番と6番ピンでデューティー比を0に設定しても完全にはオフにならない可能性があります．
-[%hardbreaks]
+--
+// HOW TO USE SECTION ENDS
 
+
+// SEE ALSO SECTION
+[#see_also]
+--
 
 [float]
 === 参照
+
 [role="language"]
-* #LANGUAGE# link:../analogRead[analogRead()]
-* #LANGUAGE# link:../../arduino-due-only/analogWriteResolution[analogWriteResolution()]
+* #LANGUAGE# link:../../arduino-due-only/analogwriteresolution[analogWriteResolution()]
 
 [role="definition"]
 * #DEFINITION# http://arduino.cc/en/Tutorial/PWM[PWM^]
@@ -97,4 +102,5 @@ void loop()
 * #EXAMPLE# http://arduino.cc/en/Tutorial/Blink[Blink^]
 
 --
-// HOW TO USE SECTION ENDS
+// SEE ALSO SECTION ENDS
+
