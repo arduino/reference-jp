@@ -7,7 +7,7 @@ Arduinoコンテンツへの貢献ありがとうございます．これらは�
 == コンテンツの作成と編集
 新しいコンテンツを提供したい場合は，新しいファイルを作成し(テキストエディタまたはコードエディタを使用)，「.adoc」として保存してください．  
 ファイル名には，括弧や特殊文字を使わないでください．  
-Manutiusプラットフォームで使用しているAsciiDoc構文を確認したい場合はこちらをご覧ください． https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] こちらには，タイトルや文章，リンク，画像，表，コード，様々なmbed(動画やスライドショー，オーディオ，コード)が含まれています． レンダリングされたものは， https://cdn.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[こちら] で見ることができます．
+以下のURLにてAsciiDoc構文の概要を確認することができます． https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] こちらには，タイトルや文章，リンク，画像，表，コード，様々なmbed(動画，スライドショー，オーディオまたはコード)が含まれています． レンダリングされたものは， https://cdn.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[こちら] で見ることができます．
 
 言語リファレンスや既存のコンテンツを提供したい場合は，2つのテンプレートを確認することができます．reference-jp/AsciiDoc_sample/Reference_Terms:
 
@@ -33,7 +33,7 @@ adocファイルの編集やArduinoチームへのファイル変更の提案の
 
 既存のコードや説明を，追加または修正することで貢献することができます．貢献する前には，常に，既存のIssueを参照するか，新しいIssueを開くようにしてください． 
 
-あなたの貢献は，Attribution-ShareAlike 4.0 Internationalの下でライセンスされます．こちらを参照 https://creativecommons.org/licenses/by-sa/4.0/
+あなたの貢献は，Creative Commons Attribution-Share Alike 3.0の下でライセンスされます．こちらを参照 https://creativecommons.org/licenses/by-sa/3.0/
 
 
 === フォルダ構造
