@@ -2,7 +2,7 @@
 title: Entity Title
 title_expanded: Less Than or Equal To
 categories: [ "Structure" ]
-subCategories: [ "Comparison Operators" ]
+subCategories: [ "Subcategory Name" ]
 ---
 // ARDUINO LANGUAGE REFERENCE TAGS (above)   ►►►►► ALWAYS INCLUDE IN YOUR FILE ◄◄◄◄◄
 // title will show up in the Index of all Reference terms
