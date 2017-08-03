@@ -22,7 +22,7 @@ subCategories: [ "応用入出力" ]
 
 もし，立ち上がりエッジをクロックとして使用するデバイスを接続する場合は，`shiftIn()` を実行する前に，最初にクロックピンをLOWにしておく必要があります．たとえば， `digitalWrite(clockPin, LOW)` を実行します．
 
-注: この関数はソフトウェアによって実行されています; ハードウェアで実行され，高速で動作する link:../SPI[SPI library] も参照(特定のピンでしか動作しません)．
+注: この関数はソフトウェアによって実行されています; ハードウェアで実行され，高速で動作する link:https://www.arduino.cc/en/Reference/SPI[SPI library] も参照(特定のピンでしか動作しません)．
 [%hardbreaks]
 
 
