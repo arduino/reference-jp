@@ -101,7 +101,7 @@ void loop() {
 
 [float]
 === 注意
-データピンとクロックピンは，link:../digital-io/pinMode[pinMode()] を使用して，出力(OUTPUT)に設定する必要があります．.
+データピンとクロックピンは，link:../digital-io/pinmode/[pinMode()] を使用して，出力(OUTPUT)に設定する必要があります．.
 
 shiftOutは1バイト(8ビット)を出力するために作られています．よって，255より大きな値を出力するためには，2段階の操作が必要となります．
 [source,arduino]
