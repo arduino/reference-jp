@@ -1,7 +1,7 @@
 ---
 title: analogReadResolution()
 categories: [ "Functions" ]
-subCategories: [ "Arduino DUE only" ]
+subCategories: [ "Arduino DUE のみ" ]
 ---
 
 :source-highlighter: pygments
@@ -16,27 +16,27 @@ subCategories: [ "Arduino DUE only" ]
 --
 
 [float]
-=== Description
-analogReadResolution() is an extension of the Analog API for the Arduino Due.
+=== 説明
+analogReadResolution() は，Arduino Dueのための拡張AnalogAPIです．
 
-Sets the size (in bits) of the value returned by analogRead(). It defaults to 10 bits (returns values between 0-1023) for backward compatibility with AVR based boards.
+analogRead()で返される値のサイズをビット単位で設定します．デフォルトでは，AVRベースのボードとの下位互換性のために10ビットになっています（戻り値は0～1023）．
 
-The *Due has 12-bit ADC capabilities* that can be accessed by changing the resolution to 12. This will return values from analogRead() between 0 and 4095.
+*Dueは12ビットのA/D変換能力があるので，* 分解能を12ビットに変更して利用することができます．これにより，analogRead()からの戻り値は0～4095になります．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `analogReadResolution(bits)`
 
 
 [float]
-=== Parameters
-`bits`: determines the resolution (in bits) of the value returned by `analogRead()` function. You can set this 1 and 32. You can set resolutions higher than 12 but values returned by `analogRead()` will suffer approximation. See the note below for details.
+=== パラメータ
+`bits`:  `analogRead()` 関数からの戻り値の分解能（ビット単位）．1から32の間で設定することができます．12以上に設定することは可能ですが，`analogRead()` からの戻り値は近似値になります．「参照」の項目で詳細を確認してください．
 
 [float]
-=== Returns
-Nothing
+=== 戻り値
+なし
 
 --
 // OVERVIEW SECTION ENDS
@@ -49,58 +49,58 @@ Nothing
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-The code shows how to use ADC with different resolutions.
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+このコードでは，A/D変換を異なる分解能で使用する方法を紹介しています．
 
 [source,arduino]
 ----
 void setup() {
-  // open a serial connection
+  // シリアル接続を開始する
   Serial.begin(9600);
 }
 
 void loop() {
-  // read the input on A0 at default resolution (10 bits)
-  // and send it out the serial connection
+  // A0からの入力を標準の分解能で読み取り（10ビット），
+  // シリアル通信で送信する
   analogReadResolution(10);
   Serial.print("ADC 10-bit (default) : ");
   Serial.print(analogRead(A0));
 
-  // change the resolution to 12 bits and read A0
+  // 分解能を12ビットに変更して読み取る
   analogReadResolution(12);
   Serial.print(", 12-bit : ");
   Serial.print(analogRead(A0));
 
-  // change the resolution to 16 bits and read A0
+  // 分解能を16ビットに変更して読み取る
   analogReadResolution(16);
   Serial.print(", 16-bit : ");
   Serial.print(analogRead(A0));
 
-  // change the resolution to 8 bits and read A0
+  // 分解能を8ビットに変更して読み取る
   analogReadResolution(8);
   Serial.print(", 8-bit : ");
   Serial.println(analogRead(A0));
 
-  // a little delay to not hog serial monitor
+  // シリアルモニタを過度に使用しないようにするための少しのディレイ
   delay(100);
 }
 ----
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-If you set the `analogReadResolution()` value to a value higher than your board's capabilities, the Arduino will only report back at its highest resolution padding the extra bits with zeros.
+=== 注意
+`analogReadResolution()` の値を使用しているボードの能力以上に設定した場合は，あまりのビットは0で埋め合わされます．
 
-For example: using the Due with `analogReadResolution(16)` will give you an approximated 16-bit number with the first 12 bits containing the real ADC reading and the last 4 bits *padded with zeros*.
+例：`analogReadResolution(16)` をDueで使用した場合，16ビットの近似値を返します．これは，最初の12ビットはA/D変換で読み取られた値を使用し，最後の4ビットは*0で埋め合わしたもの*です．
 
-If you set the `analogReadResolution()` value to a value lower than your board's capabilities, the extra least significant bits read from the ADC will be *discarded*.
+`analogReadResolution()` の値を，使用しているボードの能力以下に設定した場合は，A/D変換で得られた値から，余った下位ビットを*切り捨てます*．
 
-Using a 16 bit resolution (or any resolution *higher* than actual hardware capabilities) allows you to write sketches that automatically handle devices with a higher resolution ADC when these become available on future boards without changing a line of code.
+16ビットの分解能（または，実際のハードウェア能力以上の分解能）を設定することで， 高い分解能を持った将来のボードが利用可能になったときに，コードの変更なしに処理することのできるスケッチを描くことができます．
 [%hardbreaks]
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
@@ -109,7 +109,7 @@ Using a 16 bit resolution (or any resolution *higher* than actual hardware capab
 * #EXAMPLE# http://arduino.cc/en/Tutorial/AnalogInputPins[Description of the analog input pins]
 
 [role="language"]
-* #LANGUAGE# link:../../analog-io/analogRead[analogRead()]
+* #LANGUAGE# link:../../analog-io/analogread[analogRead()]
 
 
 --
