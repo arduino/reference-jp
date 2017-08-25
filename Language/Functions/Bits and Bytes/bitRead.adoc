@@ -1,7 +1,7 @@
 ---
 title: bitRead()
 categories: [ "Functions" ]
-subCategories: [ "Bits and Bytes" ]
+subCategories: [ "ビットとバイト" ]
 ---
 
 :source-highlighter: pygments
@@ -17,26 +17,26 @@ subCategories: [ "Bits and Bytes" ]
 --
 
 [float]
-=== Description
-Reads a bit of a number.
+=== 説明
+指定したビットの数値を読み取ります．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `bitRead(x, n)`
 
 
 [float]
-=== Parameters
-`x`: the number from which to read
+=== パラメータ
+`x`: 読み取りたい数値変数の名前
 
-`n`: which bit to read, starting at 0 for the least-significant (rightmost) bit
+`n`: 読み取りたいビットの指定，一番右である最下位ビット(LSB)が0
 
 
 [float]
-=== Returns
-the value of the bit (0 or 1).
+=== 戻り値
+ビットの数値（0か1）
 
 --
 // OVERVIEW SECTION ENDS
@@ -49,14 +49,14 @@ the value of the bit (0 or 1).
 --
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 [role="language"]
 * #LANGUAGE# link:../bit[bit()] +
-* #LANGUAGE# link:../bitWrite[bitWrite()]
+* #LANGUAGE# link:../bitwrite[bitWrite()]
 
 --
 // HOW TO USE SECTION ENDS
