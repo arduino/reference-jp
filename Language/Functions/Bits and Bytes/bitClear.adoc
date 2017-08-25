@@ -55,8 +55,8 @@ subCategories: [ "ビットとバイト" ]
 
 [role="language"]
 * #LANGUAGE# link:../bit[bit()] +
-* #LANGUAGE# link:../bitRead[bitRead()] +
-* #LANGUAGE# link:../bitWrite[bitWrite()] +
-* #LANGUAGE# link:../bitSet[bitSet()]
+* #LANGUAGE# link:../bitread[bitRead()] +
+* #LANGUAGE# link:../bitwrite[bitWrite()] +
+* #LANGUAGE# link:../bitset[bitSet()]
 --
 // HOW TO USE SECTION ENDS
