@@ -17,25 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is alpha (that is a letter). Returns true if thisChar contains a letter. 
+=== 説明
+charのデータがアルファベット（文字）であるか解析します．thisCharに文字が含まれていたら，真を返します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isAlpha(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`:変数 　*使用できるデータ型：* char
 
 [float]
-=== Returns
-`true`: if thisChar is alpha.
+=== 戻り値
+`true`: thisCharが文字ならば真
 
 --
 // OVERVIEW SECTION ENDS
@@ -47,11 +47,11 @@ Analyse if a char is alpha (that is a letter). Returns true if thisChar contains
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isAlpha(this))      // tests if this is a letter
+if (isAlpha(this))      // thisが文字であるかテスト
 {
 	Serial.println("The character is alphanumeric");
 }
@@ -73,11 +73,4 @@ else
 [float]
 === See also
 
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
-
---
 // SEE ALSO SECTION ENDS
