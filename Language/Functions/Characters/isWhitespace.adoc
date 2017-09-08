@@ -1,7 +1,7 @@
 ﻿---
 title: "isWhitespace()"
 categories: [ "Functions" ]
-subCategories: [ "Characters" ]
+subCategories: [ "文字" ]
 ---
 
 :source-highlighter: pygments
@@ -17,26 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is a white space, that is space, formfeed ('\f'), newline ('\n'), carriage return ('\r'), horizontal tab ('\t'), and vertical tab ('\v')). 
-Returns true if thisChar contains a white space. 
+=== 説明
+charが空白文字であるか解析します（スペースまたは改ページ('\f')，改行文字('\n')，リターン('\r')，タブ文字('\t')，垂直タブ('\v')）．thisCharが空白文字の場合は，真を返します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isWhitespace(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`: 変数　 *使用可能なデータ型：* char
 
 [float]
-=== Returns
-`true`: if thisChar is a white space.
+=== 戻り値
+`true`: thisCharが空白文字の場合
 
 --
 // OVERVIEW SECTION ENDS
@@ -48,11 +47,11 @@ Returns true if thisChar contains a white space.
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isWhitespace(this))      // tests if this is a white space
+if (isWhitespace(this))      // thisが空白文字かテスト
 {
 	Serial.println("The character is a white space");
 }
@@ -72,13 +71,7 @@ else
 --
 
 [float]
-=== See also
-
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
+=== 参照
 
 --
 // SEE ALSO SECTION ENDS
