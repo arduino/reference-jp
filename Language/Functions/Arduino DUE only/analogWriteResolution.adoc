@@ -26,7 +26,7 @@ Dueには以下のハードウェア能力があります．
 * AVRベースのボードでは，12個のピンは分解能がデフォルトで8ビットのPWMとなっていますが，これらは12ビットに変更することが可能です．
 * 12ビットのD/A変換 (Digital-to-Analog Converter).
 
-分解能を12ビットに設定することによって，`analogWrite()` を最大の分解能（0～4095）で利用できるほか，with values between 0 and 4095 to exploit the full DAC resolution or to set the PWM signal without rolling over.
+分解能を12ビットに設定することによって，`analogWrite()` を最大の分解能（0～4095）で利用できるほか，ロールオーバーなしに，PWMシグナルを設定することができます．（ロールオーバー：例として，分解能を10bitに設定している時に，1024以上の数値を入力した場合には，余りの値は0からカウントされます．このことをロールオーバーと呼びます．）
 [%hardbreaks]
 
 
