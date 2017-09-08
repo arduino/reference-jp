@@ -1,7 +1,7 @@
 ---
 title: "isAlphaNumeric()"
 categories: [ "Functions" ]
-subCategories: [ "Characters" ]
+subCategories: [ "文字" ]
 ---
 
 :source-highlighter: pygments
@@ -17,25 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is alphanumeric (that is a letter or a numbers). Returns true if thisChar contains either a number or a letter. 
+=== 説明
+charが英数字であるか解析します．thisCharに数字か文字が含まれていたら，真を返します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isAlphaNumeric(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`: 変数  *使用可能なデータ型：* char
 
 [float]
 === Returns
-`true`: if thisChar is alphanumeric.
+`true`: thisCharが英数字の場合
 
 --
 // OVERVIEW SECTION ENDS
@@ -47,11 +47,11 @@ Analyse if a char is alphanumeric (that is a letter or a numbers). Returns true 
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isAlphaNumeric(this))      // tests if this isa letter or a number
+if (isAlphaNumeric(this))      // thisが英数字かテスト
 {
 	Serial.println("The character is alphanumeric");
 }
@@ -71,13 +71,6 @@ else
 --
 
 [float]
-=== See also
+=== 参照
 
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
-
---
 // SEE ALSO SECTION ENDS
