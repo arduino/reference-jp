@@ -71,6 +71,6 @@ else
 --
 
 [float]
-=== See also
+=== 参照
 
 // SEE ALSO SECTION ENDS
