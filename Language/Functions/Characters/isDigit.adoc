@@ -1,7 +1,7 @@
 ﻿---
 title: "isDigit()"
 categories: [ "Functions" ]
-subCategories: [ "Characters" ]
+subCategories: [ "文字" ]
 ---
 
 :source-highlighter: pygments
@@ -17,25 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is a digit (that is a number). Returns true if thisChar is a number. 
+=== 説明
+charが数字であるか解析します．thisCharが数字であれば，真を返します
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isDigit(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`: 変数　 *使用可能なデータ型：* char
 
 [float]
-=== Returns
-`true`: if thisChar is a number.
+=== 戻り値
+`true`: thisCharが数字の場合
 
 --
 // OVERVIEW SECTION ENDS
@@ -47,11 +47,11 @@ Analyse if a char is a digit (that is a number). Returns true if thisChar is a n
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isDigit(this))      // tests if this is a letter
+if (isDigit(this))      // thisが数字であるかテスト
 {
 	Serial.println("The character is a number");
 }
@@ -71,13 +71,7 @@ else
 --
 
 [float]
-=== See also
-
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
+=== 参照
 
 --
 // SEE ALSO SECTION ENDS
