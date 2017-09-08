@@ -1,7 +1,7 @@
 ﻿---
 title: "isSpace()"
 categories: [ "Functions" ]
-subCategories: [ "Characters" ]
+subCategories: [ "文字" ]
 ---
 
 :source-highlighter: pygments
@@ -17,25 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is the space character. Returns true if thisChar contains a letter. 
+=== 説明
+charが空白文字であるか解析します．thisCharが空白文字を含んでいる場合は，真を返します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isAlpha(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`: 変数　 *使用可能なデータ型：* char
 
 [float]
-=== Returns
-`true`: if thisChar is a space.
+=== 戻り値
+`true`: thisCharが空白文字の場合
 
 --
 // OVERVIEW SECTION ENDS
@@ -47,11 +47,11 @@ Analyse if a char is the space character. Returns true if thisChar contains a le
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isSpace(this))      // tests if this is the space character
+if (isSpace(this))      // thisが空白文字であるかテスト
 {
 	Serial.println("The character is a space");
 }
@@ -71,13 +71,7 @@ else
 --
 
 [float]
-=== See also
-
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
+=== 参照
 
 --
 // SEE ALSO SECTION ENDS
