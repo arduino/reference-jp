@@ -1,7 +1,7 @@
 ﻿---
 title: "isControl()"
 categories: [ "Functions" ]
-subCategories: [ "Characters" ]
+subCategories: [ "文字" ]
 ---
 
 :source-highlighter: pygments
@@ -17,25 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is a control character. Returns true if thisChar is a control character. 
+=== 説明
+charが制御文字か解析します．thisCharが制御文字の場合は，真を返します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isControl(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`: 変数　 *使用可能なデータ型：* char
 
 [float]
-=== Returns
-`true`: if thisChar is a control character.
+=== 戻り値
+`true`: thisCharが制御文字の場合
 
 --
 // OVERVIEW SECTION ENDS
@@ -47,11 +47,11 @@ Analyse if a char is a control character. Returns true if thisChar is a control 
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isControl(this))      // tests if this is a control character
+if (isControl(this))      // thisが制御文字かテスト
 {
 	Serial.println("The character is a control character");
 }
@@ -71,13 +71,7 @@ else
 --
 
 [float]
-=== See also
-
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
+=== 参照
 
 --
 // SEE ALSO SECTION ENDS
