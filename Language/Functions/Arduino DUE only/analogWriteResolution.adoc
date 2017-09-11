@@ -1,7 +1,7 @@
 ---
 title: analogWriteResolution()
 categories: [ "Functions" ]
-subCategories: [ "Arduino DUE only" ]
+subCategories: [ "Arduino DUE のみ" ]
 ---
 
 :source-highlighter: pygments
@@ -16,31 +16,32 @@ subCategories: [ "Arduino DUE only" ]
 --
 
 [float]
-=== Description
-`analogWriteResolution()` is an extension of the Analog API for the Arduino Due.
+=== 説明
+`analogWriteResolution()` はArduino Dueのための拡張Analog APIです．
 
-`analogWriteResolution()` sets the resolution of the `analogWrite()` function. It defaults to 8 bits (values between 0-255) for backward compatibility with AVR based boards.
+`analogWriteResolution()` では，`analogWrite()`　関数の分解能を設定することができます．デフォルトでは，他のAVRベースのボードとの下位互換性のために8ビットになっています．（戻り値は0~255）
 
-The Due has the following hardare capabilities
-* 12 pins which default to 8-bit PWM, like the AVR-based boards. These can be changed to 12-bit resolution.
-* Pns with 12-bit DAC (Digital-to-Analog Converter).
+Dueには以下のハードウェア能力があります．
 
-By setting the write resolution to 12, you can use `analogWrite()` with values between 0 and 4095 to exploit the full DAC resolution or to set the PWM signal without rolling over.
+* AVRベースのボードでは，12個のピンは分解能がデフォルトで8ビットのPWMとなっていますが，これらは12ビットに変更することが可能です．
+* 12ビットのD/A変換 (Digital-to-Analog Converter).
+
+分解能を12ビットに設定することによって，`analogWrite()` を最大の分解能（0～4095）で利用できるほか，ロールオーバーなしに，PWMシグナルを設定することができます．（ロールオーバー：例として，分解能を10bitに設定している時に，1024以上の数値を入力した場合には，余りの値は0からカウントされます．このことをロールオーバーと呼びます．）
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `analogWriteResolution(bits)`
 
 
 [float]
-=== Parameters
-`bits`: determines the resolution (in bits) of the values used in the `analogWrite()` function. The value can range from 1 to 32. If you choose a resolution higher or lower than your board's hardware capabilities, the value used in `analogWrite()` will be either truncated if it's too high or padded with zeros if it's too low. See the note below for details.
+=== パラメータ
+`bits`:  `analogWrite()` 関数で使用する分解能（ビット単位）． 1から32の間で設定することができます． ハードウェア能力以上の分解能を選択した場合は， `analogWrite()` からの値は切り詰められたものになり，ハードウェア能力以下の場合は，0で埋め合わされます．以下の「注意」の項目で詳細を確認してください．
 
 [float]
-=== Returns
-Nothing
+=== 戻り値
+なし
 
 --
 // OVERVIEW SECTION ENDS
@@ -53,43 +54,41 @@ Nothing
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 Explain Code
 
 [source,arduino]
 ----
 void setup(){
-  // open a serial connection
+  // シリアル接続を開始する
   Serial.begin(9600);
-  // make our digital pin an output
+  // ピンを出力に設定する
   pinMode(11, OUTPUT);
   pinMode(12, OUTPUT);
   pinMode(13, OUTPUT);
 }
 
 void loop(){
-  // read the input on A0 and map it to a PWM pin
-  // with an attached LED
+  // A0からのアナログ入力を読み取り，PWMピン（LED）へmap関数を使用する
   int sensorVal = analogRead(A0);
   Serial.print("Analog Read) : ");
   Serial.print(sensorVal);
 
-  // the default PWM resolution
+  // 標準のPWM分解能
   analogWriteResolution(8);
   analogWrite(11, map(sensorVal, 0, 1023, 0 ,255));
   Serial.print(" , 8-bit PWM value : ");
   Serial.print(map(sensorVal, 0, 1023, 0 ,255));
 
-  // change the PWM resolution to 12 bits
-  // the full 12 bit resolution is only supported
-  // on the Due
+  // PWM分解能を12ビットに変更
+  // 12ビットの分解能はDueのみでサポート
   analogWriteResolution(12);
   analogWrite(12, map(sensorVal, 0, 1023, 0, 4095));
   Serial.print(" , 12-bit PWM value : ");
   Serial.print(map(sensorVal, 0, 1023, 0, 4095));
 
-  // change the PWM resolution to 4 bits
+  // PWM分解能を4ビットに変更
   analogWriteResolution(4);
   analogWrite(13, map(sensorVal, 0, 1023, 0, 127));
   Serial.print(", 4-bit PWM value : ");
@@ -101,26 +100,16 @@ void loop(){
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-If you set the `analogWriteResolution()` value to a value higher than your board's capabilities, the Arduino will discard the extra bits. For example: using the Due with `analogWriteResolution(16)` on a 12-bit DAC pin, only the first 12 bits of the values passed to `analogWrite()` will be used and the last 4 bits will be discarded.
+=== 注意
+ `analogWriteResolution()` の値をボードの能力以上に設定した場合，Arduinoは余分なビットを切り捨てます．例として，Dueの12ビットD/A変換ピンで `analogWriteResolution(16)` に設定した場合，最初の12ビットの値は `analogWrite()` で使用されますが，最後の4ビットは切り捨てられます．
 
-If you set the `analogWriteResolution()` value to a value lower than your board's capabilities, the missing bits will be *padded with zeros* to fill the hardware required size. For example: using the Due with analogWriteResolution(8) on a 12-bit DAC pin, the Arduino will add 4 zero bits to the 8-bit value used in `analogWrite()` to obtain the 12 bits required.
+もし， `analogWriteResolution()` の値をボードの能力以下に設定した場合，ハードウェアの必要としているサイズまで，欠けているビットが *0で埋め合わされます．* 例として，Dueの12ビットD/A変換ピンで `analogWriteResolution(8)` に設定した場合， `analogWrite()` は12ビットが必要なため，8ビットの値に4ビット分の0が追加されます．
 [%hardbreaks]
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
-[role="example"]
-* #EXAMPLE# http://arduino.cc/en/Tutorial/AnalogInputPins[Description of the analog input pins]
-
-[role="language"]
-* #LANGUAGE# link:../../analog-io/analogWrite[analogWrite()] +
-* #LANGUAGE# link:../../analog-io/analogRead[analogRead()] +
-* #LANGUAGE# link:../../math/map[map()]
-
-
---
 // HOW TO USE SECTION ENDS
