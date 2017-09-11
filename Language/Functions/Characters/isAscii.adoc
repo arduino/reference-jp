@@ -1,7 +1,7 @@
 ﻿---
 title: "isAscii()"
 categories: [ "Functions" ]
-subCategories: [ "Characters" ]
+subCategories: [ "文字" ]
 ---
 
 :source-highlighter: pygments
@@ -17,25 +17,25 @@ subCategories: [ "Characters" ]
 --
 
 [float]
-=== Description
-Analyse if a char is Ascii. Returns true if thisChar contains an Ascii character. 
+=== 説明
+charがAscii文字が解析します．thisCharにAscii文字が含まれていたら，真を返します．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 [source,arduino]
 ----
 `isAscii(thisChar)`
 ----
 
 [float]
-=== Parameters
-`thisChar`: variable. *Allowed data types:* char
+=== パラメータ
+`thisChar`: 変数 　*使用可能なデータ型：* char
 
 [float]
-=== Returns
-`true`: if thisChar is Ascii.
+=== 戻り値
+`true`: thisCharがAscii文字の場合
 
 --
 // OVERVIEW SECTION ENDS
@@ -47,11 +47,11 @@ Analyse if a char is Ascii. Returns true if thisChar contains an Ascii character
 --
 
 [float]
-=== Example Code
+=== コード例
 
 [source,arduino]
 ----
-if (isAscii(this))      // tests if this is an Ascii character
+if (isAscii(this))      // thisがAscii文字かテスト
 {
 	Serial.println("The character is Ascii");
 }
@@ -71,13 +71,7 @@ else
 --
 
 [float]
-=== See also
-
-[role="language"]
-* #LANGUAGE#  link:../../../variables/data-types/char[char]
-* #LANGUAGE#  link:../../../structure/control-structure/if[if (conditional operators)]
-* #LANGUAGE#  link:../../../structure/control-structure/while[while (conditional operators)]
-* #LANGUAGE# link:../../communication/serial/read[read()]
+=== 参照
 
 --
 // SEE ALSO SECTION ENDS
