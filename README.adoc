@@ -8,13 +8,13 @@ Arduinoコンテンツへの貢献ありがとうございます．これらは�
 == コンテンツの作成と編集
 新しいコンテンツを提供したい場合は，新しいファイルを作成し(テキストエディタまたはコードエディタを使用)，「.adoc」として保存してください．  
 ファイル名には，括弧や特殊文字を使わないでください．  
-以下のURLにてAsciiDoc構文の概要を確認することができます． https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] こちらには，タイトルや文章，リンク，画像，表，コード，様々なmbed(動画，スライドショー，オーディオまたはコード)が含まれています． レンダリングされたものは， https://reference.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[こちら] で見ることができます．
+以下のURLにてAsciiDoc構文の概要を確認することができます． https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] こちらには，タイトルや文章，リンク，画像，表，コード，様々なmbed(動画，スライドショー，オーディオまたはコード)が含まれています． レンダリングされたものは， https://https://www.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[こちら] で見ることができます．
 
 言語リファレンスや既存のコンテンツを提供したい場合は，2つのテンプレートを確認することができます．reference-jp/AsciiDoc_sample/Reference_Terms:
 
-*link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite] などの用語にはこちらを使用 https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (レンダリング後は https://reference.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[こちら]) 
+*link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite] などの用語にはこちらを使用 https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (レンダリング後は https://https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[こちら]) 
 
-*link:http://arduino.cc/en/Reference/Serial[Serial] などの機能グループにはこちらを使用 https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`] (レンダリング後は https://reference.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[こちら])
+*link:http://arduino.cc/en/Reference/Serial[Serial] などの機能グループにはこちらを使用 https://raw.githubusercontent.com/arduino/reference-jp/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`] (レンダリング後は https://https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[こちら])
 
 すべてのリファレンスのファイルには，説明やコード例，関係する情報へのリンク(参照)が含まれている必要があります．
 
@@ -58,4 +58,4 @@ reference-jp
 
 ----
 
-Languageフォルダの内のファイルツリーは，リンク内のものと同じ構造となります．link:http://arduino.cc/en/Reference/HomePage[Arduino Reference webpage]
+Languageフォルダの内のファイルツリーは，リンク内のものと同じ構造となります．link:https://www.arduino.cc/reference/en[Arduino Reference webpage]
