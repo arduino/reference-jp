@@ -4,8 +4,7 @@ categories: [ "Functions" ]
 subCategories: [ "応用入出力" ]
 ---
 
-:source-highlighter: pygments
-:pygments-style: arduino
+
 
 
 

@@ -4,8 +4,7 @@ categories: [ "Functions" ]
 subCategories: [ "Arduino DUE のみ" ]
 ---
 
-:source-highlighter: pygments
-:pygments-style: arduino
+
 
 
 = analogWriteResolution()
