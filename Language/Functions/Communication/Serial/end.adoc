@@ -13,16 +13,16 @@ title: Serial.end()
 --
 
 [float]
-=== Description
-Disables serial communication, allowing the RX and TX pins to be used for general input and output. To re-enable serial communication, call link:../begin[Serial.begin()].
+=== 説明
+シリアル通信を無効化し，RXとTXピンでの標準入出力を可能にします．シリアル通信を再開する場合には，link:../begin[Serial.begin()]を呼び出してください．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `Serial.end()`
 
-_Arduino Mega only:_
+_Arduino Megaのみ:_
 
 `Serial1.end()` +
 `Serial2.end()` +
@@ -30,12 +30,12 @@ _Arduino Mega only:_
 
 
 [float]
-=== Parameters
-Nothing
+=== パラメータ
+なし
 
 [float]
-=== Returns
-Nothing
+=== 戻り値
+なし
 
 --
 // OVERVIEW SECTION ENDS
