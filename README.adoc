@@ -1,9 +1,8 @@
 = Reference-jp
 
-Reference-jp is the repo for the Language Reference documentation of the Arduino syntax in **Japanese**.  
-All the Reference terms files are in AsciiDoc format. Manutius, the Arduino platform to manage and publish content, turns Asciidoc documents into HTML pages, PDFs, and more.
+Reference-jpは，**日本語**によるArduinoのリファレンス書類のためのリポジトリです． 
 
-Arduinoコンテンツへの貢献ありがとうございます．これらは，Arduinoコミュニティへの助けになります．
+Arduinoコンテンツへの貢献ありがとうございます．これらは，Arduinoコミュニティへの助けになります．どのようにこのプロジェクトに貢献できるかを知りたい場合は，この https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[step by step tutorial] をご確認ください．
 
 == コンテンツの作成と編集
 新しいコンテンツを提供したい場合は，新しいファイルを作成し(テキストエディタまたはコードエディタを使用)，「.adoc」として保存してください．  
