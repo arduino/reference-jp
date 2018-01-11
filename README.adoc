@@ -1,9 +1,8 @@
 = Reference-jp
 
 Reference-jpは，**日本語**によるArduinoのリファレンス書類のためのリポジトリです． 
-全てのリファレンス用語ファイルは，AsciiDocフォーマットが使用されています．掲載されたコンテンツの管理や，AsciiDoc書類からHTMLページやPDFファイルなどへの変換は，ManutiusというArduinoのプラットフォームを使用して管理しています．
 
-Arduinoコンテンツへの貢献ありがとうございます．これらは，Arduinoコミュニティへの助けになります．
+Arduinoコンテンツへの貢献ありがとうございます．これらは，Arduinoコミュニティへの助けになります．どのようにこのプロジェクトに貢献できるかを知りたい場合は，この https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[step by step tutorial] をご確認ください．
 
 == コンテンツの作成と編集
 新しいコンテンツを提供したい場合は，新しいファイルを作成し(テキストエディタまたはコードエディタを使用)，「.adoc」として保存してください．  
