@@ -13,45 +13,45 @@ title: Serial.print()
 --
 
 [float]
-=== Description
-Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as ASCII digits, defaulting to two decimal places. Bytes are sent as a single character. Characters and strings are sent as is. For example-
+=== 説明
+人間の読めるASCII文字の形でデータをシリアルポートに出力します．この関数は様々な形式を使用することができます．数字は，各桁ASCII文字を使用して出力されます．Float型も同様にASCII文字を使用し，デフォルトでは小数点以下2桁まで出力します．Byte型は，1文字の文字として出力されます．文字列とStringはそのまま出力されます．例として，
 
-* `Serial.print(78) gives "78"` +
-* `Serial.print(1.23456) gives "1.23"` +
-* `Serial.print('N') gives "N"` +
-* `Serial.print("Hello world.") gives "Hello world." `
+* `Serial.print(78) の出力は， "78"` +
+* `Serial.print(1.23456) の出力は， "1.23"` +
+* `Serial.print('N') の出力は， "N"` +
+* `Serial.print("Hello world.") の出力は， "Hello world." `
 
-An optional second parameter specifies the base (format) to use; permitted values are `BIN(binary, or base 2)`, `OCT(octal, or base 8)`, `DEC(decimal, or base 10)`, `HEX(hexadecimal, or base 16)`. For floating point numbers, this parameter specifies the number of decimal places to use. For example-
+オプションの2番目のパラメータを使うことで，底や小数点を指定することができます．使用可能な値は， `BIN(2進数)`, `OCT(8進数)`, `DEC(10進数)`, `HEX(16進数)` です．Float型の数字では，このパラメータで小数点以下の桁数を指定することができます．例として．
 
-* `Serial.print(78, BIN) gives "1001110"` +
-* `Serial.print(78, OCT) gives "116"` +
-* `Serial.print(78, DEC) gives "78"` +
-* `Serial.print(78, HEX) gives "4E"` +
-* `Serial.println(1.23456, 0) gives "1"` +
-* `Serial.println(1.23456, 2) gives "1.23"` +
-* `Serial.println(1.23456, 4) gives "1.2346"`
+* `Serial.print(78, BIN) の出力は， "1001110"` +
+* `Serial.print(78, OCT) の出力は， "116"` +
+* `Serial.print(78, DEC) の出力は， "78"` +
+* `Serial.print(78, HEX) の出力は， "4E"` +
+* `Serial.println(1.23456, 0) の出力は， "1"` +
+* `Serial.println(1.23456, 2) の出力は， "1.23"` +
+* `Serial.println(1.23456, 4) の出力は， "1.2346"`
 
-You can pass flash-memory based strings to Serial.print() by wrapping them with F(). For example:
+フラッシュメモリの文字列もF()で囲むことで，Serial.print()を使用して出力することができます．例として，
 
 `Serial.print(F(“Hello World”))`
 
-To send a single byte, use link:../write[Serial.write()].
+1バイト（文字）を送信する場合は， link:../write[Serial.write()]使用してください．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `Serial.print(val)` +
 `Serial.print(val, format)`
 
 
 [float]
-=== Parameters
-`val`: the value to print - any data type
+=== パラメータ
+`val`: 出力したい値（全てのデータ型）
 
 [float]
-=== Returns
-`size_t (long)`: `print()` returns the number of bytes written, though reading that number is optional.
+=== 戻り値
+`size_t (long)`: `print()` 出力したバイト数．この値を読み取るのは任意です．
 
 --
 // OVERVIEW SECTION ENDS
@@ -64,25 +64,25 @@ To send a single byte, use link:../write[Serial.write()].
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 
 [source,arduino]
 ----
 /*
-Uses a FOR loop for data and prints a number in various formats.
+Forのループを使用し，データを様々なフォーマットで表示するUses a FOR loop for data and prints a number in various formats.
 */
-int x = 0;    // variable
+int x = 0;    // 定数
 
 void setup() {
-  Serial.begin(9600);      // open the serial port at 9600 bps:
+  Serial.begin(9600);      // 9600 bpsでシリアルポートを開く
 }
 
 void loop() {
-  // print labels
-  Serial.print("NO FORMAT");       // prints a label
-  Serial.print("\t");              // prints a tab
+  // ラベルの表示
+  Serial.print("NO FORMAT");       // ラベルを表示する
+  Serial.print("\t");              // tabを出力
 
   Serial.print("DEC");
   Serial.print("\t");
@@ -96,37 +96,37 @@ void loop() {
   Serial.print("BIN");
   Serial.print("\t");
 
-  for(x=0; x< 64; x++){    // only part of the ASCII chart, change to suit
+  for(x=0; x< 64; x++){    // ASCII表の一部，最適な値に変更する
 
-    // print it out in many formats:
-    Serial.print(x);       // print as an ASCII-encoded decimal - same as "DEC"
-    Serial.print("\t");    // prints a tab
+    // 様々なフォーマットで表示する
+    Serial.print(x);       // ASCIIエンコードの10進数として表示，"DEC"と同じ
+    Serial.print("\t");    // tabを出力
 
-    Serial.print(x, DEC);  // print as an ASCII-encoded decimal
-    Serial.print("\t");    // prints a tab
+    Serial.print(x, DEC);  // ASCIIエンコードの10進数として表示
+    Serial.print("\t");    // tabを出力
 
-    Serial.print(x, HEX);  // print as an ASCII-encoded hexadecimal
-    Serial.print("\t");    // prints a tab
+    Serial.print(x, HEX);  // ASCIIエンコードの16進数として表示
+    Serial.print("\t");    // tabを出力
 
-    Serial.print(x, OCT);  // print as an ASCII-encoded octal
-    Serial.print("\t");    // prints a tab
+    Serial.print(x, OCT);  // ASCIIエンコードの8進数として表示
+    Serial.print("\t");    // tabを出力
 
-    Serial.println(x, BIN);  // print as an ASCII-encoded binary
-    //                             then adds the carriage return with "println"
-    delay(200);            // delay 200 milliseconds
+    Serial.println(x, BIN);  // ASCIIエンコードの2進数として表示
+    //                          そして，"println"で改行を出力する．
+    delay(200);            // 200ミリ秒待つ
   }
-  Serial.println("");      // prints another carriage return
+  Serial.println("");      // さらに改行を出力する
 }
 ----
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-As of version 1.0, serial transmission is asynchronous; `Serial.print()` will return before any characters are transmitted.
+=== 注意
+バージョン1.0以降の通信は非同期です．`Serial.print()` は文字が送信される前にリターンします．
 [%hardbreaks]
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
