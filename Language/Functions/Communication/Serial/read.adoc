@@ -64,7 +64,7 @@ void loop() {
 
         // データを受信した場合にのみ，データを送信する
         if (Serial.available() > 0) {
-                // read the incoming byte:
+                // 受信したデータの1バイトを読み取る
                 incomingByte = Serial.read();
 
                 // 受信したデータを出力する
