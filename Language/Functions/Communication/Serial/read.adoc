@@ -13,16 +13,16 @@ title: Serial.read()
 --
 
 [float]
-=== Description
-Reads incoming serial data. read() inherits from the link:../../stream[Stream] utility class.
+=== 説明
+受信したシリアルデータを読み込みます．read()は link:../../stream[Stream] utility classを継承しています．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `Serial.read()`
 
-_Arduino Mega only:_
+_Arduino Mega のみ:_
 
 `Serial1.read()` +
 `Serial2.read()` +
@@ -30,12 +30,12 @@ _Arduino Mega only:_
 
 
 [float]
-=== Parameters
-Nothing
+=== パラメータ
+なし
 
 [float]
-=== Returns
-The first byte of incoming serial data available (or -1 if no data is available) - `int`.
+=== 戻り値
+受信したシリアルデータの最初の1バイト．データが利用可能でない場合はint型の -1 を返します．
 
 --
 // OVERVIEW SECTION ENDS
@@ -48,27 +48,27 @@ The first byte of incoming serial data available (or -1 if no data is available)
 --
 
 [float]
-=== Example Code
-// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
+=== コード例
+// Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
 
 
 [source,arduino]
 ----
-int incomingByte = 0;   // for incoming serial data
+int incomingByte = 0;   // 受信するシリアルデータのために準備
 
 void setup() {
-        Serial.begin(9600);     // opens serial port, sets data rate to 9600 bps
+        Serial.begin(9600);     // シリアルポートを開き，データレートを9600 bpsにセットする
 }
 
 void loop() {
 
-        // send data only when you receive data:
+        // データを受信した場合にのみ，データを送信する
         if (Serial.available() > 0) {
                 // read the incoming byte:
                 incomingByte = Serial.read();
 
-                // say what you got:
-                Serial.print("I received: ");
+                // 受信したデータを出力する
+                Serial.print("I received: ");
                 Serial.println(incomingByte, DEC);
         }
 }
@@ -77,7 +77,7 @@ void loop() {
 
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
