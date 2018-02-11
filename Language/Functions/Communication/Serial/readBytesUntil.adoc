@@ -13,30 +13,30 @@ title: Serial.readBytesUntil()
 --
 
 [float]
-=== Description
-Serial.readBytesUntil() reads characters from the serial buffer into an array. The function terminates if the terminator character is detected, the determined length has been read, or it times out (see link:../setTimeout[Serial.setTimeout()]).
+=== 説明
+Serial.readBytesUntil() シリアルバッファから読み取った文字列を配列に格納します．終端文字を読み込んだ時や，指定の長さの文字列が読み込まれた時，タイムアウトした時に，この関数は終了されます．（link:../setTimeout[Serial.setTimeout()]を参照）
 
-`Serial.readBytesUntil()` returns the number of characters read into the buffer. A 0 means no valid data was found.
+`Serial.readBytesUntil()` はバッファに読み込まれた文字数を返します．0は有効なデータがなかったことを意味します．
 
-`Serial.readBytesUntil()` inherits from the link:../../stream[Stream] utility class.
+`Serial.readBytesUntil()` はlink:../../stream[Stream] utility classを継承しています．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `Serial.readBytesUntil(character, buffer, length)`
 
 
 [float]
-=== Parameters
-`character` : the character to search for (`char`)
+=== パラメータ
+`character` : 探したい文字(`char`)
 
-`buffer`: the buffer to store the bytes in (`char[]` or `byte[]`)
+`buffer`: 文字列を格納するバッファ(`char[]` or `byte[]`)
 
-`length` : the number of bytes to read (`int`)
+`length` : 読み込むバイト数 (`int`)
 
 [float]
-=== Returns
+=== 戻り値
 `byte`
 
 --
@@ -50,7 +50,7 @@ Serial.readBytesUntil() reads characters from the serial buffer into an array. T
 --
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
