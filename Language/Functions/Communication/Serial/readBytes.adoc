@@ -10,28 +10,28 @@
 --
 
 [float]
-=== Description
-`Serial.readBytes()` reads characters from the serial port into a buffer. The function terminates if the determined length has been read, or it times out (see link:../setTimeout[Serial.setTimeout()]).
+=== 説明
+`Serial.readBytes()` はシリアルポートから文字を読み込み，バッファに格納します．指定長さの文字を読み取ったり，タイムアウトした場合に終了されます（link:../setTimeout[Serial.setTimeout()]を参照）．
 
-`Serial.readBytes()` returns the number of characters placed in the buffer. A 0 means no valid data was found.
+`Serial.readBytes()` はバッファに格納された文字数を戻り値とします．0は有効なデータが見つからなかったことを意味します．
 
-`Serial.readBytes()` inherits from the link:../../stream[Stream] utility class.
+`Serial.readBytes()` は link:../../stream[Stream] utility classを継承しています．
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 構文
 `Serial.readBytes(buffer, length)`
 
 
 [float]
-=== Parameters
-`buffer`: the buffer to store the bytes in (`char[]` or `byte[]`)
+=== パラメータ
+`buffer`: 文字を格納するバッファ（`char[]` または `byte[]`）
 
-`length` : the number of bytes to read (`int`)
+`length` : 読み込むバイト数 （`int`）
 
 [float]
-=== Returns
+=== 戻り値
 `byte`
 
 --
@@ -46,7 +46,7 @@
 
 
 [float]
-=== See also
+=== 参照
 // Link relevant content by category, such as other Reference terms (please add the tag #LANGUAGE#),
 // definitions (please add the tag #DEFINITION#), and examples of Projects and Tutorials
 // (please add the tag #EXAMPLE#)  ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
