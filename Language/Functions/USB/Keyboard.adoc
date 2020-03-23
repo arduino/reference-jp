@@ -36,10 +36,6 @@ When using the Mouse or Keyboard library, it may be best to test your output fir
 [#functions]
 --
 
-// FUNCTIONS SECTION STARTS
-[#functions]
---
-
 '''
 
 [float]
