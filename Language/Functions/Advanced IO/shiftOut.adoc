@@ -21,7 +21,7 @@ subCategories: [ "応用入出力" ]
 
 注- もし，立ち上がりエッジをクロックとして使用するデバイスを接続する場合は，`shiftOut()` を実行する前に，最初にクロックピンをLOWにしておく必要があります．たとえば， `digitalWrite(clockPin, LOW)` などを実行します．
 
-この関数はソフトウェアによって実行されています; ハードウェアで実行され，高速で動作する link:../SPI[SPI library] も参照(特定のピンでしか動作しません)．
+この関数はソフトウェアによって実行されています; ハードウェアで実行され，高速で動作する https://www.arduino.cc/en/Reference/SPI[SPI library] も参照(特定のピンでしか動作しません)．
 [%hardbreaks]
 
 
@@ -100,7 +100,7 @@ void loop() {
 
 [float]
 === 注意
-データピンとクロックピンは，link:../digital-io/pinmode/[pinMode()] を使用して，出力(OUTPUT)に設定する必要があります．.
+データピンとクロックピンは，link:../../digital-io/pinmode/[pinMode()] を使用して，出力(OUTPUT)に設定する必要があります．.
 
 shiftOutは1バイト(8ビット)を出力するために作られています．よって，255より大きな値を出力するためには，2段階の操作が必要となります．
 [source,arduino]
